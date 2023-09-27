@@ -111,6 +111,9 @@ footer h2 span {
 .access_flex div:first-child {
 	margin-bottom: 10px;
 }
+.access_flex div p:first-child::before {
+	content: "〒";
+}
 .access_flex div p:last-child {
 	font-size: 14px;
 	margin-top: 5px;
@@ -138,7 +141,7 @@ iframe {
 	text-decoration: none;
 }
 .logo_flex {
-	margin: 0 30px 0 20px;
+	margin: 0 30px 10px 20px;
 	display: flex;
 	justify-content: space-between;
 }
@@ -175,10 +178,9 @@ iframe {
 	margin-bottom: 20px;
 }
 .nav_flex {
-	width: 360px;
 	display: flex;
-	margin: 0 15px;
-	flex-wrap: wrap;
+	margin: 0 auto;
+	justify-content: space-between;
 }
 .nav_flex li {
 	list-style-type: none;
@@ -190,10 +192,15 @@ iframe {
 }
 .icon_flex {
 	width: 40vw;
-	margin: 0 auto;
+	margin: 30px auto 0;
 	display: flex;
 	justify-content: space-between;
-	font-size: 10px;
+}
+.icon_flex div img {
+	width: 30px;
+}	
+.icon_flex div a:hover img {
+	transform: translateY(-3px);
 }
 footer > p {
 	background-color: #373737;
@@ -206,32 +213,12 @@ footer > p {
 /*ここからトップページ*/
 .top_visual {
 	width: 100vw;
-	height: 90vh;
+	height: 95vh;
 	background-size: cover;
 	background-image: url(../images/main_visual.jpg);
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-position: center center;
-}
-.position {
-	width: 85vw;
-	margin: 0 auto;
-	position: fixed;
-	top: 45vh;
-	left: 8vw;
-	color: #fff;
-	font-weight: bold;
-	letter-spacing: 2px;
-	font-family:"ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
-}
-.position p:first-of-type {
-	font-size: 60px;
-}
-.position p:last-of-type {
-	font-size: 25px;
-}
-.position p:last-of-type span {
-	font-size: 35px;
 }
 .news {
 	width: 88vw;
@@ -279,7 +266,7 @@ footer > p {
 	margin-bottom: 10px;
 }
 .button1 a {
-	width: 120px;
+	width: 150px;
 	border: 2px solid #c54540;
 	margin: 0 0 0 auto;
 	padding: 8px;
@@ -315,22 +302,11 @@ footer > p {
   transform-origin: 0% 50%;
   transform: scaleX(1);
 }
-.trainer {
-	position: relative;
-}
-.trainer figure:first-of-type {
-	width: 65vw;
+.trainer figure {
+	width: 85vw;
 	height: 300px;
 	background-color: #ccc;
 	margin-bottom: 30px;
-}
-.trainer figure:last-of-type {
-	width: 45vw;
-	height: 230px;
-	background-color: #777;
-	position: absolute;
-	top: 15vh;
-	left: 40vw;
 }
 .trainer section p:first-of-type {
 	margin: 5px 0 10px;
@@ -338,27 +314,33 @@ footer > p {
 .trainer section p:last-of-type {
 	font-size: 15px;
 }
-.top_flex {
+.top_point {
 	font-size: 13px;
 	width: 90vw;
 	margin: 0 auto 30px;
-	display: flex;
-	flex-wrap: wrap;
 }
-.top_flex div {
+.top_flex {
+	margin: 0 auto 30px;
+	display: flex;
+	justify-content: space-between;
+}
+.top_flex:first-child {
+	margin-bottom: 10px;
+}
+.point {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	transform: skew(-15deg,0deg);
 	margin: 5px;
-	text-align: center;
 	background-color: #c54540;
 	width: 27vw;
 	height: 47px;
 	box-shadow: 2px 2px 5px #333;
 	color: #fff;
 }
-.top_flex div:first-child, .top_flex div:nth-child(2), .top_flex div:nth-child(4){
-	line-height: 47px;
-}
-.top_flex div:last-child a::after {
+.point:last-child a::after {
 	content: "▶";
 }
 .top_flex a {
@@ -366,7 +348,7 @@ footer > p {
 	text-decoration: none;
 	color: #fff;
 }
-.top_flex div:last-child:hover {
+.top_flex:last-child div:last-child:hover {
 	opacity: 0.8;
 }
 /*ここまでトップページ*/
@@ -436,12 +418,13 @@ footer > p {
 	margin-bottom: 0;
 }
 .table table {
+	line-height: 1.7;
 	width: 85vw;
 	margin: 0 auto;
 	table-layout: fixed;
 }
 .table h4 {
-	font-size: 20px;
+	font-size: 24px;
 	margin-bottom: 8px;
 	font-family:"ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
 }
@@ -515,7 +498,8 @@ footer > p {
 /*ここからレビューページ*/
 .review_page section {
 	width: 85vw;
-	margin: 25px auto 0;
+	margin: 0 auto;
+	padding: 30px;
 }
 .review_page h3 {
 	font-family:"ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
@@ -537,70 +521,37 @@ footer > p {
 }
 .review2, .review4 {
 	background-color: #ccc;
-	padding: 30px;
 }
 /*ここまでレビューページ*/
 
 /*ここから設備ページ*/
 .equipment_page section {
 	width: 85vw;
-	margin: 25px auto 0;
+	margin: 35px auto 0;
 }
 .equipment_page section h3 {
 	font-family:"ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
-	font-size: 16px;
+	font-size: 24px;
 	padding-bottom: 3px;
 	margin-bottom: 15px;
 	border-bottom: 2px solid #c54540;
 }
+.figure div figure {
+	background-color: #ccc;
+	margin: 10px auto 0;
+	padding: 8px;
+}
 .figure figcaption {
-	width: 200px;
 	font-size: 14px;
-	margin-top: 8px;
+	margin-top: 5px;
 }
 .figure figcaption span {
 	font-size: 16px;
 	line-height: 1.7;
 }
-.figure figure {
-	height: 130px;
-	display: flex;
-	justify-content: space-between;
-	background-color: #ccc;
-	margin: 8px 0;
-	padding: 7px;
-}
 .figure img {
-	width: 105px;
-	margin: 0 5px;
-	object-fit: contain; 
-}
-.figure figure:nth-child(even) {
-	flex-direction: row-reverse;
-}
-.figure div:first-child figure:nth-child(2) {
-	height: 150px;
-	background-image: url(../images/setubi_img2.JPG);
-	background-size: 85px;
-	background-repeat: no-repeat;
-	background-position: right 17% top -5%;
-}
-.figure figure:nth-child(2) img {
-	margin: 0 0 0 10px;
-	object-position: bottom right;
-}
-.figure div:last-child figure:last-child {
-	background-image: url(../images/setubi_img5.JPG);
-	background-size: 100px;
-	background-repeat: no-repeat;
-	background-position: right 30% top -10%;
-}
-.figure figure:last-child img {
-	margin: 0 0 0 10px;
-	object-position: bottom right;
-}
-.figure figure:last-child figcaption {
-	width: 40vw;
+	margin: 0 auto;
+	width: 100%;
 }
 .list li {
 	list-style-type: none;
@@ -611,8 +562,8 @@ footer > p {
 .amenity p {
 	text-align:center;
 	background-color: #c54540;
-	width: 30vw;
-	padding: 0.5vw;
+	width: 110px;
+	padding: 3px;
 	color: #fff;
 	border-radius: 20px;
 	margin-bottom: 10px;
@@ -643,34 +594,36 @@ footer > p {
 	padding-bottom: 3px;
 	margin-bottom: 15px;
 	border-bottom: 2px solid #c54540;
+	font-size: 24px;
+}
+.traning_flex {
+	width: 85vw;
+	margin: 0 auto;
 }
 .traning {
-	width: 85vw;
 	background-color: #333;
-	margin-bottom: 15px;
 	padding: 8px;
 	display: flex;
+	justify-content: space-around;
+	margin: 15px;
 }
-.traning_box1 p {
-	text-align: center;
-	margin-right: 15px;
-	margin-left: calc(1px + 10 * (100vw - 360px) / 90);
-}
-.traning_box1 p:first-child {
+.traning_box1 {
 	font-family:"ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
 	font-weight: bold;
 	font-size: 100px;
 	color: #666;
-	position: absolute;
+	position: relative;
+	height: 100px;
 	line-height: 100px;
 }
-.traning_box1 p:last-child {
+.traning_box1 div {
+	font-family: YuGothic, "Yu Gothic medium", "Hiragino Sans", Meiryo, "sans-serif";
+	font-weight: lighter;
 	width: 100px;
-	font-size: 13px;
+	font-size: 14px;
 	color: #fff;
-	position: relative;
-	top: 29%;
-	left: 0;
+	position: absolute;
+	top: 0;
 }
 .traning_box2 {
 	color: #fff;
@@ -693,23 +646,24 @@ footer > p {
 }
 .day p {
 	text-indent: -11px;
+	margin-top: 8px;
 }
 /*ここまでトレーニング内容ページ*/
 
 /*ここからお問合わせページ*/
-.contact_page > p {
+.contact_box {
 	font-size: 15px;
 	width: 88vw;
 	margin: 20px auto;
 }
 .contact_icon {
-	width: 60vw;
-	margin: 0 auto;
+	width: 50vw;
+	margin: 20px auto 0;
 	display: flex;
+	justify-content: space-around;
 }
-.contact_icon div a {
-	text-decoration: none;
-	color: #000;
+.contact_icon img {
+	width: 30px;
 }
 
 @media screen and (min-width: 450px) {
@@ -732,57 +686,62 @@ footer > p {
 		margin: 0 auto 20px;
 	}
 	.icon_flex {
-		margin-top: 20px;
-	}
-	.responsive_flex {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-	}
-	.review_flex p {
-		margin-top: 0px;
+		margin-top: 35px;
 	}
 	.about p {
 		margin-bottom: 0;
 	}
-	.trainer section {
-		width: 300px;
-	}
-	.trainer figure:first-of-type {
-		width: 180px;
-		height: 230px;
-		background-color: #ccc;
-		margin-bottom: 30px;
-		margin-right: 50px;
-	}
-	.trainer figure:last-of-type {
-		width: 100px;
-		height: 130px;
-		top: 20vh;
-		left: calc(80px + 50 * (100vw - 450px) / 400);
-	}
-	.review_flex {
-		display: flex;
-	}
 	.top_flex {
 		font-size: 13px;
-		width: 85vw;
 		margin: 0 auto 30px;
 	}
-	.traning {
-		width: 320px;
+	.top_flex div {
+		margin-right: 8px;
 	}
-	.traning_box1 p {
-		margin-left: 5px;
+	.traning {
+		padding: 14px;
 	}
 	.traning_box2 {
 		margin-left: 10px;
 	}
 	.figure {
-		width: 310px;
 		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
+		justify-content: space-around;
+	}
+	.figure div {
+		width: 47%;
+	}
+	.figure figure:nth-child(odd) {
+		margin-right: 2vw;
+	}
+	.figure figure:nth-child(even) {
+		height: 290px;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	.responsive_flex {
+		display: flex;
+		justify-content: space-around;
+	}
+	.trainer section {
+		width: calc(300px + 130 * (100vw - 450px) / 400);
+	}
+	.trainer figure {
+		width: 250px;
+		height: 230px;
+		margin-bottom: 30px;
+		margin-right: 20px;
+	}
+	.review_flex p {
+		margin-top: 0px;
+	}
+	.review_flex {
+		display: flex;
+		justify-content: space-around;
+	}
+	.line figure {
+		width: 300px;
 	}
 }
 
@@ -792,19 +751,19 @@ footer > p {
 		max-width: 1900px;
 	}
 	header h1 img {
-		width: 15vw;
+		width: 260px;
 		margin-left: 3vw;
 	}
 	.responsive {
 		display: flex;
 	}
 	.access_img img {
-	width: 50vw;
+		width: 45vw;
 	}
 	.access_flex {
 		margin-top: 0;
 		flex-direction: column;
-		justify-content: space-around;
+		justify-content: center;
 	}
 	.access_flex div:first-child {
 		margin-left: 20px;
@@ -815,6 +774,10 @@ footer > p {
 	.logo_flex img {
 		width: 20vw;
 	}
+	.nav_flex {
+		width: 600px;
+		margin: 0 auto;
+	}
 	.news {
 		width: 75vw;
 		height: 50px;
@@ -824,19 +787,129 @@ footer > p {
 		width: 75vw;
 		margin: 0 auto 60px;
 	}
-	.responsive_flex {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-around;
-	}
-	.trainer section {
-		width: 600px;
-	}
 	.responsive2 {
 		display: flex;
 		flex-direction: row-reverse;
 	}
-	.review1, .review3 {
-		padding: 30px;
+	.icon_flex {
+		width: 20vw;
+	}
+	.bottom_page {
+		margin-bottom: 70px;
+	}
+	.sub_img img {
+		width: 65vw;
+		margin: 0 auto;
+	}
+	.price_page {
+		position: absolute;
+	}
+	.price {
+		padding: 45px 0 20px 45px;
+		margin-bottom: 0;
+		background-color: #F7F7F7;
+		position: relative;
+		top: -15vh;
+		left: 35vw;
+	}
+	.box2 {
+		display: flex;
+		justify-content: space-around;
+	}
+	.table table {
+		line-height: 2.3;
+	}
+	.table table {
+		width: 40vw;
+	}
+	.box3_flex {
+		width: 60vw;
+		margin: 40px auto 60px;
+	}
+	.review_page h2 {
+		margin-bottom: 60px;
+	}
+	.line {
+		display: flex;
+	}
+	.line figure {
+		width: 500px;
+	}
+	.amenity_flex {
+		margin-bottom: 40px;
+	}
+	.traning_page > p {
+    	width: 65vw;
+    	margin: 50px auto;
+	}
+	.traning_flex {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+	.traning {
+		width: 350px;
+		margin: 0;
+		padding: 8px;
+	}
+	.contact {
+		margin-bottom: 0;
+	}
+	.contact_box {
+		width: 50vw;
+		padding: 45px 0 8px 45px;
+		margin-bottom: 0;
+		background-color: #F7F7F7;
+		position: relative;
+		top: -15vh;
+		left: 20vw;
+	}
+	.contact_icon {
+    	width: 40vw
+	}
+}
+
+
+@media screen and (min-width: 1366px) {
+	
+	.top_visual {
+		margin: 0 auto;
+		width: 80vw;
+		background-size: cover;
+		background-image: url(../images/main_visual2.jpg);
+	}
+	.max_flex {
+		display: flex;
+		justify-content: space-between;
+	}
+	iframe {
+		width: 600px;
+	}
+	.top_point {
+		width: 70vw;
+	}
+	.box2 {
+		width: 90vw;
+		margin: 0 auto;
+	}
+	.review_flex p img {
+		width: 350px;
+		height: 20vh;
+	}
+	.equipment_page section {
+		width: 70vw;
+		margin-top: 50px;
+	}
+	.traning_page section {
+    	width: 80vw
+	}
+	.traning {
+		padding: 14px;
+	}
+}
+
+@media screen and (min-width: 1920px) {
+	.traning_page section {
+    	width: 70vw
 	}
 }
